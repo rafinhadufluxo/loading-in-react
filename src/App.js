@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ClipLoader from "react-spinners/ClipLoader";
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
 
 function App() {
 
   const [loading, setLoading] = useState(false);
+  
 
   useEffect(() => {
     setLoading(true)
@@ -15,35 +21,27 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      {
-        loading ?
+    <div className="App-header">
 
-        <ClipLoader
-          color={'#F37A24'}
-          loading={loading}
-          //cssOverride={override}
-          size={30}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
+     
+      {
+        loading ? (
+          <ClipLoader
+            color={"#36d7b7"}
+            loading={loading}
+            cssOverride={override}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        )
       
-        :
+        : (
         
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          <header className="App-header">
+            ola teste teste HSUAHS
+          </header>
+        )
       }
     </div>
   );
