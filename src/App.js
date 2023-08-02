@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import ClipLoader from "react-spinners/ClipLoader";
+import {Vortex} from "react-loader-spinner";
 
-const override = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "red",
-};
 
 function App() {
-
   const [loading, setLoading] = useState(false);
-  
 
   useEffect(() => {
     setLoading(true)
@@ -22,24 +15,22 @@ function App() {
 
   return (
     <div className="App-header">
-
-     
       {
         loading ? (
-          <ClipLoader
-            color={"#36d7b7"}
-            loading={loading}
-            cssOverride={override}
-            size={150}
-            aria-label="Loading Spinner"
-            data-testid="loader"
+          < Vortex
+            visible={true}
+            height="100"
+            width="100"
+            ariaLabel="vortex-loading"
+            wrapperStyle={{}}
+            message = "Loading Message"
+            wrapperClass="vortex-wrapper"
+            colors={['purple', 'purple', 'purple', 'purple', 'purple', 'purple']}
           />
-        )
-      
-        : (
-        
+        ) : (
+
           <header className="App-header">
-            ola teste teste HSUAHS
+             ola teste teste HSUAHS
           </header>
         )
       }
